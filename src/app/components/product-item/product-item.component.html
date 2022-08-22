@@ -1,2 +1,25 @@
-<p>product-item works!</p>
 
+<!-- <div class="product-image">
+  <img src={{product.url}} alt="Avatar" style="width:100%" >
+  <div class="product-container">
+    <h4><b>{{product.name}}</b></h4>
+    <p> Price {{product.price}} USD</p>
+    <input type="number" class="select-input"  value="1">
+    <input type="button" value="Add to cart">
+    <input type="button" value="Details">
+
+  </div>
+</div> -->
+
+
+<div class="card">
+  <img src={{product.url}} alt={{product.name}} style="width:100%">
+  <h1>{{product.name}}</h1>
+  <p class="price"> Price :  {{product.price}} USD</p>
+  <input type="number" class="select-input"  value="1">
+  <p><button class="btn_Add">Add to Cart</button></p>
+  <a routerLink="/product/{{ product.id }}"><button class="btn_details">Details</button></a>
+
+
+
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReadDataService } from 'src/app/services/read-data.service';
+import { Product } from '../../model/product.types';
 
 @Component({
   selector: 'app-product-list',
@@ -8,10 +9,16 @@ import { ReadDataService } from 'src/app/services/read-data.service';
 })
 export class ProductListComponent implements OnInit {
 
+  products : Product[]=[];
+
   constructor(private readDataService: ReadDataService) { }
 
   ngOnInit(): void {
-    console.log(this.readDataService.product_list)
+
+    this.readDataService.getProducts().subscribe(data => {
+      this.products = data;
+    });
+
   }
 
 }

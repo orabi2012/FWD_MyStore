@@ -1,1 +1,15 @@
 <p>product-item-detail works!</p>
+
+
+<div class="card">
+  <img src={{product[0].url}} alt={{product[0].name}} style="width:100%">
+  <h1>{{product[0].name}}</h1>
+  <p class="price"> Price :  {{product[0].price}} USD</p>
+  <p > description :  {{product[0].description}}</p>
+  <input type="number" class="select-input"  value="1">
+  <p><button class="btn_Add">Add to Cart</button></p>
+  <a routerLink="/"><button class="btn_details">Back</button></a>
+
+
+
+</div>

@@ -1,21 +1,49 @@
-.product-image {
-  list-style-type: none;
-  width: 290px;
-  padding: 20px;
-  margin: 6px 6px;
-  border: 1px solid #33B5E5;
-}
-
-.product-container {
-  margin-top: 64px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
 .select-input {
   width: 108px;
   margin-bottom: 8px;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  border-color: #000;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color:blue;
+  font-size: 22px;
+}
+
+.btn_Add {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.btn_details {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color:  cornflowerblue;
+  ;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+.card button:hover {
+  opacity: 0.7;
 }
