@@ -9,6 +9,8 @@ import { ProductItemDetailComponent } from './components/product-item-detail/pro
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { CartComponent } from './components/cart/cart.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
 
   ],
   providers: [],

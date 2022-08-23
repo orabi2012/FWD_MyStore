@@ -1,7 +1,7 @@
 <p>product-item-detail works!</p>
 
 
-<div class="card">
+<!-- <div class="card">
   <img src={{product[0].url}} alt={{product[0].name}} style="width:100%">
   <h1>{{product[0].name}}</h1>
   <p class="price"> Price :  {{product[0].price}} USD</p>
@@ -9,7 +9,19 @@
   <input type="number" class="select-input"  value="1">
   <p><button class="btn_Add">Add to Cart</button></p>
   <a routerLink="/"><button class="btn_details">Back</button></a>
-
-
+</div> -->
+<hr>
+<div class="coupon">
+  <div class="container">
+    <h3>Price :  {{product[0].price}} USD</h3>
+  </div>
+  <img src={{product[0].url}} alt={{product[0].name}} style="width:100%;">
+  <div class="container" style="background-color:white">
+    <h2><b>{{product[0].name}}</b></h2>
+    <p>{{product[0].description}}</p>
+    <input type="number" class="select-input"  value="1">
+  <p><button class="btn_Add">Add to Cart</button></p>
+  <a routerLink="/"><button class="btn_details">Back</button></a>
+  </div>
 
 </div>

@@ -13,13 +13,19 @@
 
 
 <div class="card">
+  <form (ngSubmit)="addToCart(product,Qty)">
+
   <img src={{product.url}} alt={{product.name}} style="width:100%">
   <h1>{{product.name}}</h1>
   <p class="price"> Price :  {{product.price}} USD</p>
-  <input type="number" class="select-input"  value="1">
-  <p><button class="btn_Add">Add to Cart</button></p>
+
+
+    <input type="number" class="select-input"  value="1" min="1"[(ngModel)]="Qty" [ngModelOptions]="{standalone: true}">
+
+  <p><input class="btn_Add" value="add to cart" type="submit"></p>
   <a routerLink="/product/{{ product.id }}"><button class="btn_details">Details</button></a>
 
-
+</form>
 
 </div>
+<br>
