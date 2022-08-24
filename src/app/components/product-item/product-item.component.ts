@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,Output } from '@angular/core';
 import { Product } from '../../model/product.types';
 import { CartService } from 'src/app/services/cart.service';
 import { CartItem } from 'src/app/model/cart-item';
@@ -13,7 +13,7 @@ export class ProductItemComponent implements OnInit {
 
   @Input() product: Product;
 
-  Qty : number=1 ;
+  @Output() Qty : number=1 ;
 
   cartitem : CartItem = {itemId:0,name:"",price:0,Qty:0,url:""};
 

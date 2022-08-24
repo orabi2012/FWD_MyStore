@@ -7,10 +7,13 @@ import { Cart } from '../model/cart';
 })
 export class CartService {
 
+public cartTotals : number = 0 ;
 
-cart: CartItem[] = [];
+public cart: CartItem[] = [];
 
-  constructor() { }
+  constructor() {
+    this.addToLocalStorage()
+   }
 
 addToCart(cartItem : CartItem) : void {
 
@@ -18,7 +21,7 @@ addToCart(cartItem : CartItem) : void {
     this.cart.push(cartItem)
     console.log('Added 1')
     console.log(this.cart)
-
+   this.addToLocalStorage()
     return
 
   }
@@ -39,32 +42,42 @@ console.log(x)
     console.log(this.cart)
 
   }
-    // for(let i in this.cart){
-
-    //   if (this.cart[i].itemId === cartItem.itemId)
-    //   {
-    //     this.cart[i].Qty = cartItem.Qty
-    //     console.log('Updated')
+  this.addToLocalStorage()
 
 
-
-    // } else if (this.cart[i].itemId === cartItem.itemId) {
-
-
-
-
-    // }
-
-
-    //   console.log(this.cart)
-
-    // }
   }
 
 
+addToLocalStorage(){
+
+  localStorage.setItem('cart', JSON.stringify(this.cart));
+
+  this.ReadLocalStorage()
+}
+
+ReadLocalStorage():CartItem[]{
+
+let rData = localStorage.getItem('cart');
+
+this.cart = JSON.parse(rData!)
+
+console.log('cart: ', this.cart );
+
+return this.cart;
+
+}
+
+getCartTotal () : number {
+
+    this.cartTotals = 0
+    this.cart.forEach(item => {
+      this.cartTotals += (item.Qty * item.price)
+    })
 
 
+  return  this.cartTotals
 
+}
 }
 
 

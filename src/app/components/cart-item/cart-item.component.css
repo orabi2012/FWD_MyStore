@@ -1,0 +1,17 @@
+tr {
+  border-bottom: 1px solid #ddd;
+}
+th, td {
+  padding: 5px;
+  text-align: center;
+}
+th {
+  background-color: black;
+  color: aliceblue;
+
+}
+td {
+  vertical-align:middle ;
+  width: 100px;
+
+}

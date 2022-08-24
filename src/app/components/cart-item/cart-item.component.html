@@ -1,0 +1,27 @@
+
+
+
+<div class="card">
+  <tr>
+    <th>Image</th>
+    <th>Name</th>
+    <th>Unit Price</th>
+    <th>Qty</th>
+    <th>Total Price</th>
+  </tr>
+  <tr align="center">
+
+  <!-- <img src={{cartitem.url}} alt={{cartitem.name}} style="width:100%">
+  <h1>{{cartitem.name}}</h1>
+  <p class="price"> Price :  {{cartitem.price}} USD</p> -->
+  <td [width]="20"><img src={{cartitem.url}} alt={{cartitem.name}} border=3 height=100 width=100></td>
+
+  <td>{{cartitem.name}}</td>
+  <td>{{cartitem.price}}</td>
+  <td>{{cartitem.Qty}}</td>
+  <td>{{cartitem.price * cartitem.Qty | number: '1.0-2'}}</td>
+</tr>
+
+</div>
+
+

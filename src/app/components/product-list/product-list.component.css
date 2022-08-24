@@ -10,3 +10,13 @@
   display: flex;
   justify-content: center;
 }
+
+body{
+  margin: 20;
+  padding: 20;
+  background: linear-gradient(to bottom right, #E3F0FF, #FAFCFF);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }

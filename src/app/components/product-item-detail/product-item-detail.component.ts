@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit,Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ReadDataService } from 'src/app/services/read-data.service';
 import { Product } from '../../model/product.types';
 
@@ -12,6 +12,8 @@ export class ProductItemDetailComponent implements OnInit {
    products : Product[]=[];
    product : Product[]=[];
    _id:string ="";
+  //  @Input() Qty : number = 1
+
 
   //public protected:Product;
   // product: Product = {id:0,name:"",price:0,description:"",url:""};

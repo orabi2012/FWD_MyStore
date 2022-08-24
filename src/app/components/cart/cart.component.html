@@ -1,1 +1,31 @@
-<p>cart works!</p>
+
+<!-- <body>
+  <div class="product-container">
+    <div class="product-index">
+      <app-cart-item
+        *ngFor="let cartitem of cartItems"
+        [cartitem]="cartitem"
+      ></app-cart-item>
+    </div>
+  </div>
+</body> -->
+
+<div *ngIf="cartItems.length === 0" >
+  <h3  style="text-align: center"> Your Cart Is Empty</h3>
+</div>
+
+<table *ngIf="cartItems.length > 0"  border="5" bordercolor="black" align="center">
+  <tr>
+      <th colspan="5">Cart Items Total : {{cartTotals | number: '1.0-2'}}</th>
+  </tr>
+
+
+    <app-cart-item
+    *ngFor="let cartitem of cartItems"
+    [cartitem]="cartitem"
+  >
+
+</app-cart-item>
+
+
+</table>

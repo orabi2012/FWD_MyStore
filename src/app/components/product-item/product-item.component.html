@@ -20,7 +20,7 @@
   <p class="price"> Price :  {{product.price}} USD</p>
 
 
-    <input type="number" class="select-input"  value="1" min="1"[(ngModel)]="Qty" [ngModelOptions]="{standalone: true}">
+    <input type="number" class="select-input"  value="1" min="1" [(ngModel)]="Qty" [ngModelOptions]="{standalone: true}">
 
   <p><input class="btn_Add" value="add to cart" type="submit"></p>
   <a routerLink="/product/{{ product.id }}"><button class="btn_details">Details</button></a>
