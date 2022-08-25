@@ -10,6 +10,13 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent implements OnInit {
 
+_name:string='';
+email:string='';
+phone:string='';
+card:string='';
+
+
+
   cartTotals : number = 0 ;
   cartItem :CartItem = {
     cartItemId :0,
@@ -57,4 +64,8 @@ QtyUpdated(Qty : number){
   this.sum()
 }
 
+
+onSubmit(){
+  alert(`${this._name}  ${this.cartTotals}`);
+}
 }

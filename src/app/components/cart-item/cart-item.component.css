@@ -21,8 +21,8 @@ td {
   width: 200px;
   margin: 0 auto;
   display: inline;}
-  .select-input {
-    width: 108px;
+.select-input {
+    width: 50%;
     margin-bottom: 8px;
     text-align: center;
     font-size: large;

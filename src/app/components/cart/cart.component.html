@@ -1,30 +1,50 @@
+<div *ngIf="cartItems.length === 0">
+  <h3 style="text-align: center">Your Cart Is Empty  <a class="active" routerLink="/"><i class="fa fa-fw fa-home"></i>Go To Products Page</a></h3>
 
-<!-- <body>
-  <div class="product-container">
-    <div class="product-index">
-      <app-cart-item
-        *ngFor="let cartitem of cartItems"
-        [cartitem]="cartitem"
-      ></app-cart-item>
-    </div>
+
+</div>
+<div class="row"  *ngIf="cartItems.length > 0">
+  <div class="column">
+    <div id="cartItems">
+      <table
+        border="5"
+        bordercolor="black"
+        align="center"
+      >
+        <tr>
+          <th colspan="5">Cart Items Total : {{ cartTotals | number: "1.0-2" }}</th>
+        </tr>
+
+        <app-cart-item
+          *ngFor="let cartitem of cartItems"
+          [cartitem]="cartitem"
+          (removeItem)="removeItem($event)"
+          (QtyUpdated)="QtyUpdated($event)"
+        >
+        </app-cart-item>
+      </table>
+
+      </div>
   </div>
-</body> -->
+  <div class="column">
+    <h2>Check-out</h2>
+    <form #from="ngForm" (ngSubmit)="onSubmit()">
+      <label for="name"> Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name.." required minlength="6" [(ngModel)]="_name">
 
-<div *ngIf="cartItems.length === 0" >
-  <h3  style="text-align: center"> Your Cart Is Empty</h3>
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" placeholder="Your email.." required minlength="10" [(ngModel)]="email">
+
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" name="phone" placeholder="Your phone.." required minlength="8" [(ngModel)]="phone">
+
+      <label for="card">Card Number</label>
+      <input type="password" id="card" name="card" placeholder="Your Card Number.." required minlength="16"[(ngModel)]="card">
+
+      <input type="submit" [disabled]="from.invalid" value="Submit">
+    </form>
+
+  </div>
 </div>
 
-<table *ngIf="cartItems.length > 0"  border="5" bordercolor="black" align="center">
-  <tr>
-      <th colspan="5">Cart Items Total : {{cartTotals | number: '1.0-2'}}</th>
-  </tr>
 
-
-    <app-cart-item
-    *ngFor="let cartitem of cartItems" [cartitem]="cartitem" (removeItem)="removeItem($event)" (QtyUpdated)="QtyUpdated($event)"
-  >
-
-</app-cart-item>
-
-
-</table>
