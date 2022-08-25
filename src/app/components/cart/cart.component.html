@@ -21,8 +21,7 @@
 
 
     <app-cart-item
-    *ngFor="let cartitem of cartItems"
-    [cartitem]="cartitem"
+    *ngFor="let cartitem of cartItems" [cartitem]="cartitem" (removeItem)="removeItem($event)"
   >
 
 </app-cart-item>

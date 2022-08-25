@@ -1,4 +1,4 @@
-import { Component, OnInit,Input,Output } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter  } from '@angular/core';
 import { CartItem } from 'src/app/model/cart-item';
 import { CartService } from 'src/app/services/cart.service';
 
@@ -12,6 +12,11 @@ export class CartItemComponent implements OnInit {
 
   @Input() cartitem: CartItem;
   @Output() Qty : number=1 ;
+  @Output() removeItem :EventEmitter<CartItem> = new EventEmitter;
+  @Output() cartTotals :EventEmitter<number> = new EventEmitter;
+
+
+
 
 
 
@@ -35,9 +40,17 @@ export class CartItemComponent implements OnInit {
 
 
     }
+  remove(cartItem:CartItem):void{
 
-  removeFromCart(cartItem :CartItem){
+      this.removeItem.emit(cartItem)
 
-      this.cartService.removeFromCart(cartItem)
     }
+
+  sum():number{
+    return this.cartService.cartTotals
+  }
+  // removeFromCart(cartItem :CartItem){
+
+  //     this.cartService.removeFromCart(cartItem)
+  //   }
 }

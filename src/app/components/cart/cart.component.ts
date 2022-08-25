@@ -29,9 +29,23 @@ export class CartComponent implements OnInit {
 
     this.cartItems = this.cartService.ReadLocalStorage()
 
-    this.cartTotals = this.cartService.getCartTotal()
+   // this.cartTotals = this.cartService.getCartTotal()
 
     console.log('cart Component'+ this.cartItems)
   }
 
+  removeItem(cartItem:CartItem):void{
+
+    console.log('Remove' + cartItem.name)
+
+    this.cartItems = this.cartItems.filter(p => p.itemId !== cartItem.itemId )
+
+    this.cartService.removeFromCart(cartItem)
+
+  }
+
+sum(){
+this.cartTotals = this.cartService.getCartTotal();
+
+}
 }
