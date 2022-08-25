@@ -8,10 +8,24 @@ th, td {
 th {
   background-color: black;
   color: aliceblue;
-
 }
 td {
   vertical-align:middle ;
   width: 100px;
-
 }
+.buttons {
+  width: 200px;
+  margin: 0 auto;
+  display: inline;}
+.action_btn {
+  width: 200px;
+  margin: 0 auto;
+  display: inline;}
+  .select-input {
+    width: 108px;
+    margin-bottom: 8px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    border-color: #000;
+  }

@@ -22,6 +22,9 @@ addToCart(cartItem : CartItem) : void {
     console.log('Added 1')
     console.log(this.cart)
    this.addToLocalStorage()
+   alert(`${cartItem.name} added to the cart`)
+   
+
     return
 
   }
@@ -32,6 +35,8 @@ console.log(x)
 
     // exist
     this.cart[x].Qty = cartItem.Qty
+    alert(`${cartItem.name} : Qty Updated to ${cartItem.Qty}`)
+
     console.log('Updated')
     console.log(this.cart)
 
@@ -40,13 +45,27 @@ console.log(x)
     this.cart.push(cartItem)
     console.log('Added')
     console.log(this.cart)
+    alert(`${cartItem.name} added to the cart`)
+
 
   }
+  this.getCartTotal ()
   this.addToLocalStorage()
 
 
   }
 
+removeFromCart(cartItem :CartItem):void{
+  let index = this.cart.findIndex(item => item.itemId === cartItem.itemId)
+
+    this.cart.splice(index , 1)
+    alert(`${cartItem.name} Remove from the cart`)
+
+    localStorage.removeItem('cart')
+
+this.addToLocalStorage()
+
+}
 
 addToLocalStorage(){
 

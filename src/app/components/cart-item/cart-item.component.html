@@ -18,7 +18,24 @@
 
   <td>{{cartitem.name}}</td>
   <td>{{cartitem.price}}</td>
-  <td>{{cartitem.Qty}}</td>
+  <!-- <td>{{cartitem.Qty}}</td> -->
+  <td>
+
+    <input type="number" class="select-input"  value={{cartitem.Qty}} min="1" [(ngModel)]="Qty" [ngModelOptions]="{standalone: true}">
+  <div class="buttons">
+
+      <div class="action_btn">
+
+      <button name="submit" class="action_btn submit" type="button" value="Save" (click)="updateQty(cartitem.Qty)">Update </button>
+      <button name="submit" class="action_btn cancel" type="button" value="Cancel" (click)="removeFromCart(cartitem)">Remove</button>
+
+      <p id="saved"></p>
+
+      </div>
+
+  </div>
+  </td>
+
   <td>{{cartitem.price * cartitem.Qty | number: '1.0-2'}}</td>
 </tr>
 
