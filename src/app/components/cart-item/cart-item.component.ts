@@ -11,9 +11,10 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartItemComponent implements OnInit {
 
   @Input() cartitem: CartItem;
+
   @Output() Qty : number=1 ;
   @Output() removeItem :EventEmitter<CartItem> = new EventEmitter;
-  @Output() cartTotals :EventEmitter<number> = new EventEmitter;
+  @Output() QtyUpdated :EventEmitter<number> = new EventEmitter;
 
 
 
@@ -37,6 +38,8 @@ export class CartItemComponent implements OnInit {
 
     this.cartService.addToCart(this.cartitem)
 
+    this.QtyUpdated.emit(this.Qty)
+
 
 
     }
@@ -46,9 +49,9 @@ export class CartItemComponent implements OnInit {
 
     }
 
-  sum():number{
-    return this.cartService.cartTotals
-  }
+  // sum(){
+  //   return this.myCartTotals.emit();
+  // }
   // removeFromCart(cartItem :CartItem){
 
   //     this.cartService.removeFromCart(cartItem)

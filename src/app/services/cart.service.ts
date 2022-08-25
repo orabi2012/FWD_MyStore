@@ -21,6 +21,7 @@ export class CartService {
       console.log(this.cart);
       this.addToLocalStorage();
       alert(`${cartItem.name} added to the cart`);
+      
 
       return;
     }

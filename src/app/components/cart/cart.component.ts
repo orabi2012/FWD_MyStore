@@ -32,6 +32,8 @@ export class CartComponent implements OnInit {
    // this.cartTotals = this.cartService.getCartTotal()
 
     console.log('cart Component'+ this.cartItems)
+    this.cartTotals = this.cartService.getCartTotal()
+   // this.sum()
   }
 
   removeItem(cartItem:CartItem):void{
@@ -42,10 +44,17 @@ export class CartComponent implements OnInit {
 
     this.cartService.removeFromCart(cartItem)
 
+    this.sum()
   }
+
 
 sum(){
 this.cartTotals = this.cartService.getCartTotal();
 
 }
+
+QtyUpdated(Qty : number){
+  this.sum()
+}
+
 }
