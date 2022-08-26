@@ -30,22 +30,73 @@
     <h2>Check-out</h2>
     <form #from="ngForm" (ngSubmit)="onSubmit()">
       <label for="name"> Name</label>
-      <input type="text" id="name" name="name" placeholder="minimum 6 characters" required minlength="6" [(ngModel)]="_name">
+      <input type="text" id="name" name="name" placeholder="minimum 6 characters" required minlength="6" [(ngModel)]="_name" #Vname="ngModel">
+
+      <div *ngIf="Vname.invalid && (Vname.dirty || Vname.touched)"
+      class="alert">
+
+    <div *ngIf="Vname.errors?.['required']">
+      Name is required.
+    </div>
+    <div *ngIf="Vname.errors?.['minlength']">
+      Name must be at least 6 characters long.
+    </div>
+
+  </div>
 
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="Your email.." required minlength="10"  [(ngModel)]="email" email="true">
+      <input type="email" id="email" name="email" placeholder="Your email.." required minlength="10"  [(ngModel)]="email" email="true" #Vemail="ngModel">
+
+      <div *ngIf="Vemail.invalid && (Vemail.dirty || Vemail.touched)"
+      class="alert">
+
+    <div *ngIf="Vemail.errors?.['required']">
+      Email is required.
+    </div>
+    <div *ngIf="Vemail.errors?.['minlength']">
+      Email must be at least 10 characters long.
+    </div>
+    <div *ngIf="Vemail.errors?.['email']">
+      Email must be valied  : example@gmail.com .
+    </div>
+
+  </div>
 
       <label for="phone">Phone</label>
-      <input type="text" id="phone" name="phone" placeholder="Your phone..(11 digits)" required minlength="11" maxlength="11"  pattern="[0-9]*" [(ngModel)]="phone">
+      <input type="text" id="phone" name="phone" placeholder="Your phone..(11 digits)" required minlength="11" maxlength="11"  pattern="[0-9]*" [(ngModel)]="phone" #Vphone="ngModel">
+
+      <div *ngIf="Vphone.invalid && (Vphone.dirty || Vphone.touched)"
+      class="alert">
+
+    <div *ngIf="Vphone.errors?.['required']">
+      Phone is required.
+    </div>
+    <div *ngIf="Vphone.errors?.['minlength']">
+      Phone must be 11 Digits long.
+    </div>
+
+  </div>
 
       <label for="card">Card Number</label>
       <input type="number" id="card" name="card" placeholder=" 16 Numbers" required minlength="16" maxlength="16"  pattern="[0-9]{16}" [(ngModel)]="card"
+      #Vcard="ngModel"
       oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
       >
+      <div *ngIf="Vcard.invalid && (Vcard.dirty || Vcard.touched)"
+      class="alert">
 
+    <div *ngIf="Vcard.errors?.['required']">
+      Card Number is required.
+    </div>
+    <div *ngIf="Vcard.errors?.['pattern']">
+      Card Number must be 16 Digits long.
+    </div>
+
+  </div>
 
       <input type="submit" [disabled]="from.invalid" value="Submit">
     </form>
+
 
   </div>
 </div>
