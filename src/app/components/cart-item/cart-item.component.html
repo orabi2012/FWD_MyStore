@@ -17,7 +17,7 @@
   <td [width]="20"><img src={{cartitem.url}} alt={{cartitem.name}} border=3 height=100 width=100></td>
 
   <td>{{cartitem.name}}</td>
-  <td>{{cartitem.price}}</td>
+  <td>{{cartitem.price}} $ </td>
   <!-- <td>{{cartitem.Qty}}</td> -->
   <td>
 
@@ -38,7 +38,7 @@
   </div>
   </td>
 
-  <td>{{cartitem.price * cartitem.Qty | number: '1.0-2'}}</td>
+  <td>{{cartitem.price * cartitem.Qty | number: '1.0-2'}} $ </td>
 </tr>
 
 </div>

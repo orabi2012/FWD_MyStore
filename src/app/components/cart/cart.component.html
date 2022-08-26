@@ -12,7 +12,7 @@
         align="center"
       >
         <tr>
-          <th colspan="5">Cart Items Total : {{ cartTotals | number: "1.0-2" }}</th>
+          <th colspan="5">Cart Items Total : {{ cartTotals | number: "1.0-2" }} $</th>
         </tr>
 
         <app-cart-item
@@ -39,7 +39,7 @@
       <input type="tel" id="phone" name="phone" placeholder="Your phone..(11 digits)" required minlength="11" pattern="[0-9]{11}" [(ngModel)]="phone">
 
       <label for="card">Card Number</label>
-      <input type="password" id="card" name="card" placeholder=" 16 Numbers" required minlength="16"[(ngModel)]="card">
+      <input type="password" id="card" name="card" placeholder=" 16 Numbers" required minlength="16" maxlength="16" max[(ngModel)]="card">
 
       <input type="submit" [disabled]="from.invalid" value="Submit">
     </form>
