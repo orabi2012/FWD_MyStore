@@ -36,10 +36,13 @@
       <input type="email" id="email" name="email" placeholder="Your email.." required minlength="10"  [(ngModel)]="email" email="true">
 
       <label for="phone">Phone</label>
-      <input type="tel" id="phone" name="phone" placeholder="Your phone..(11 digits)" required minlength="11" pattern="[0-9]{11}" [(ngModel)]="phone">
+      <input type="text" id="phone" name="phone" placeholder="Your phone..(11 digits)" required minlength="11" maxlength="11"  pattern="[0-9]*" [(ngModel)]="phone">
 
       <label for="card">Card Number</label>
-      <input type="password" id="card" name="card" placeholder=" 16 Numbers" required minlength="16" maxlength="16" [(ngModel)]="card">
+      <input type="number" id="card" name="card" placeholder=" 16 Numbers" required minlength="16" maxlength="16"  pattern="[0-9]{16}" [(ngModel)]="card"
+      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+      >
+
 
       <input type="submit" [disabled]="from.invalid" value="Submit">
     </form>
