@@ -21,7 +21,7 @@ export class CartService {
       console.log(this.cart);
       this.addToLocalStorage();
       alert(`${cartItem.name} added to the cart`);
-      
+
 
       return;
     }
@@ -31,7 +31,7 @@ export class CartService {
     if (x >= 0) {
       // exist
       this.cart[x].Qty = cartItem.Qty;
-      alert(`${cartItem.name} : Qty Updated to ${cartItem.Qty}`);
+      // alert(`${cartItem.name} : Qty Updated to ${cartItem.Qty}`);
 
       console.log('Updated');
       console.log(this.cart);

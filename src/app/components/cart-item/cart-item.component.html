@@ -21,7 +21,8 @@
   <!-- <td>{{cartitem.Qty}}</td> -->
   <td>
 
-    <input type="number" class="select-input"  value={{cartitem.Qty}} min="1" [(ngModel)]="Qty" [ngModelOptions]="{standalone: true}">
+    <input type="number" class="select-input"  value={{cartitem.Qty}} min="1" [(ngModel)]="Qty" [ngModelOptions]="{standalone: true}"
+    ngModel (ngModelChange)="updateQty(cartitem.Qty)">
     <hr>
     <div class="buttons">
 
