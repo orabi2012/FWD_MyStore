@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CartItem } from '../model/cart-item';
-import { Cart } from '../model/cart';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root',
@@ -20,7 +20,7 @@ export class CartService {
       console.log('Added 1');
       console.log(this.cart);
       this.addToLocalStorage();
-      alert(`${cartItem.name} added to the cart`);
+     this.successNotification(`${cartItem.name} added to the cart`);
 
 
       return;
@@ -32,14 +32,16 @@ export class CartService {
       // exist
       this.cart[x].Qty = cartItem.Qty;
       // alert(`${cartItem.name} : Qty Updated to ${cartItem.Qty}`);
+      this.successNotification(`${cartItem.name} Qty Updated`);
 
-      console.log('Updated');
-      console.log(this.cart);
+
     } else {
       this.cart.push(cartItem);
       console.log('Added');
       console.log(this.cart);
-      alert(`${cartItem.name} added to the cart`);
+      // alert(`${cartItem.name} added to the cart`);
+      this.successNotification(`${cartItem.name} added to the cart`);
+
     }
     this.getCartTotal();
     this.addToLocalStorage();
@@ -49,7 +51,10 @@ export class CartService {
     let index = this.cart.findIndex((item) => item.itemId === cartItem.itemId);
 
     this.cart.splice(index, 1);
-    alert(`${cartItem.name} Remove from the cart`);
+
+    // alert(`${cartItem.name} Remove from the cart`);
+    this.errorNotification(`${cartItem.name} Remove from the cart`);
+
 
     localStorage.removeItem('cart');
 
@@ -79,5 +84,13 @@ export class CartService {
     });
 
     return this.cartTotals;
+  }
+
+
+  successNotification(msg : string) {
+    Swal.fire('', msg, 'success');
+  }
+  errorNotification(msg : string) {
+    Swal.fire('', msg, 'error');
   }
 }
