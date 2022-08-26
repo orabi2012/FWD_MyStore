@@ -6,7 +6,7 @@
   font-weight: bold;
 }
 
-input[type=text],[type=number],[type=password]{
+input[type=text],[type=number],[type=password],[type=email],[type=tel]{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;

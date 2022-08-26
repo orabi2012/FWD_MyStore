@@ -1,8 +1,13 @@
+body{
+  background-color: azure
+}
 .confirmation-container {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 8%;
+  font-size: large;
+  font-weight: bold;
 }
 
 .confirmation-items {
@@ -12,7 +17,8 @@
 }
 
 .confirmation-header {
-  color: #33e5bc
+  color: #33e5bc;
+  font-size: larger;
 }
 
 .confirmation-item {

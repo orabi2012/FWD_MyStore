@@ -30,16 +30,16 @@
     <h2>Check-out</h2>
     <form #from="ngForm" (ngSubmit)="onSubmit()">
       <label for="name"> Name</label>
-      <input type="text" id="name" name="name" placeholder="Your name.." required minlength="6" [(ngModel)]="_name">
+      <input type="text" id="name" name="name" placeholder="minimum 6 characters" required minlength="6" [(ngModel)]="_name">
 
       <label for="email">Email</label>
-      <input type="text" id="email" name="email" placeholder="Your email.." required minlength="10" [(ngModel)]="email">
+      <input type="email" id="email" name="email" placeholder="Your email.." required minlength="10"  [(ngModel)]="email" email="true">
 
       <label for="phone">Phone</label>
-      <input type="text" id="phone" name="phone" placeholder="Your phone.." required minlength="8" [(ngModel)]="phone">
+      <input type="tel" id="phone" name="phone" placeholder="Your phone..(11 digits)" required minlength="11" pattern="[0-9]{11}" [(ngModel)]="phone">
 
       <label for="card">Card Number</label>
-      <input type="password" id="card" name="card" placeholder="Your Card Number.." required minlength="16"[(ngModel)]="card">
+      <input type="password" id="card" name="card" placeholder=" 16 Numbers" required minlength="16"[(ngModel)]="card">
 
       <input type="submit" [disabled]="from.invalid" value="Submit">
     </form>

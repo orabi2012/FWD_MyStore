@@ -27,9 +27,7 @@ export class ProductItemDetailComponent implements OnInit {
     this._id = this.route.snapshot.paramMap.get('id') || "";
 
 
-    // this.route.queryParams.subscribe(params => {
-    //   this._id = params['id'];
-    // });
+    
 
   //  var r_id :number = parseInt(this._id)
 

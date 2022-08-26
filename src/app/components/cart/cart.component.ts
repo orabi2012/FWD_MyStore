@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartItem } from 'src/app/model/cart-item';
 import { CartService } from 'src/app/services/cart.service';
 
@@ -11,7 +12,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartComponent implements OnInit {
 
 _name:string='';
-email:string='';
+email:boolean | string ='';
 phone:string='';
 card:string='';
 
@@ -29,7 +30,8 @@ card:string='';
 
   cartItems : CartItem[] = [] ;
   constructor(
-    private cartService : CartService
+    private cartService : CartService ,
+    private router : Router
   ) { }
 
   ngOnInit(): void {
@@ -66,6 +68,7 @@ QtyUpdated(Qty : number){
 
 
 onSubmit(){
-  alert(`${this._name}  ${this.cartTotals}`);
+
+this.router.navigate(['/confirm'],{queryParams : {_name: this._name , cartTotals :this.cartTotals }})
 }
 }
